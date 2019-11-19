@@ -4,27 +4,28 @@ var b = parseInt(prompt("Введите b", 1));
 var c = parseInt(prompt("Введите c", 1));
 alert(a + "х²+" + b + "x+" + c + "=0");
 
-function Mat(a, b, c) {
+function getDiscriminant(a, b, c) {
 	return b * b - 4 * a * c;
 }
-var D = Mat(a, b, c);
+var D = getDiscriminant(a, b, c);
 
-function first(a, b) {
+function getRoot(a, b) {
 	return (-b) / (2 * a);
 }
-var x = first(a, b);
+var x = getRoot(a, b);
 
-function sec(a, b) {
+function getFirstRoot(a, b) {
 	return ((-b) - Math.sqrt(D)) / (2 * a);
 }
 
-var x1 = sec(a, b);
+var x1 = getFirstRoot(a, b);
 
-function thr(a, b) {
+function getSecondRoot(a, b) {
 	return ((-b) + Math.sqrt(D)) / (2 * a);
 }
-var x2 = thr(a, b);
+var x2 = getSecondRoot(a, b);
 var result;
+
 if (D < 0) {
 	alert("У данного уравнения нет корней");
 } else {
